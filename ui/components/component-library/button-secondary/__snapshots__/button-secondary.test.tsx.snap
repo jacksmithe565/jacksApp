@@ -1,0 +1,3 @@
+exports[`ButtonSecondary should render button element correctly 1`] = `
+<button class="mm-box mm-text mm-button-base mm-button-base--size-md mm-button-secondary" data-testid="button-secondary">Button Secondary</button>
+`;
