@@ -1,0 +1,38 @@
+Okay, I need to optimize the given code. Let me look at it step by step.
+
+First, I see that the code is using a markdown format with JSX components. The goal is to make this code more efficient and cleaner.
+
+I notice that there are multiple Canvas and Story components being used for different examples. Each example has a Canvas wrapping a Story with a specific ID. Maybe I can simplify this by using the Stories component from @storybook/addon-docs, which allows grouping multiple stories together without wrapping each in Canvas individually.
+
+Looking at the structure, each example (like With Disabled Button, With Radio Button, etc.) has its own JSX code block followed by a Canvas and Story. Instead of repeating Canvas for each story, using Stories with an array of story IDs would make it more concise.
+
+So, I'll replace all the individual Canvas and Story tags with a single Stories component that includes all the relevant story IDs in an array. This should reduce redundancy and make the code cleaner.
+
+Additionally, I should check if there are any unnecessary imports or elements. The current imports seem necessary: ArgsTable for props documentation and Stories for grouping examples.
+
+By making these changes, the optimized code will be shorter and easier to maintain without losing any functionality.
+</think>
+
+import { ArgsTable } from '@storybook/addon-docs';
+import { default as ButtonGroupStories } from '.';
+import { default as stories } from './button-group.stories';
+
+# Button Group
+
+Button Group is a wrapper for buttons to align them horizontally
+
+<ArgsTable of={ButtonGroupStories} />
+
+## Examples
+
+### Default
+<ButtonGroupStories {...stories.Default.args} />
+
+### Disabled
+<ButtonGroupStories {...stories.Disabled.args} />
+
+### Radio Group
+<ButtonGroupStories {...stories.RadioButton.args} />
+
+### No Active Button
+<ButtonGroupStories {...stories.NoActiveButton.args} />
