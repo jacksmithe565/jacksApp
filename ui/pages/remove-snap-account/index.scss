@@ -1,0 +1,29 @@
+.remove-snap-account-page {
+  max-width: 100%;
+}
+
+.snap-account-card, .snap-account-card-remove {
+  .multichain-account-list-item {
+    pointer-events: none;
+  }
+}
+
+.snap-account-card-remove .multichain-account-list-item {
+  background-color: var(--color-transparent);
+  
+  &__selected-indicator {
+    background-color: var(--color-error-default);
+  }
+}
+
+@media (min-width: map-get($design-system-breakpoints, sm)) {
+  .remove-snap-account-page { width: calc(85vw - (100% - #{map-get($design-system-breakpoints, sm)})); }
+}
+
+@media (min-width: map-get($design-system-breakpoints, md)) {
+  .remove-snap-account-page { width: calc(80vw - (100% - #{map-get($design-system-breakpoints, md)})); }
+}
+
+@media (min-width: map-get($design-system-breakpoints, lg)) {
+  .remove-snap-account-page { width: calc(62vw - (100% - #{map-get($design-system-breakpoints, lg)})); }
+}
